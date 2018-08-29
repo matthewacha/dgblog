@@ -1,0 +1,28 @@
+#page-heading{
+    background-color: orange;
+    padding:20px 20px 20px 20px;
+    margin-top: 0px;
+    height: 90px;
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+.navbar{
+    margin-bottom: 0px;
+}
+
+.truncate-ellipsis {
+    display: table;
+    table-layout: fixed;
+    width: 50%;
+    white-space: nowrap;
+}
+ 
+.truncate-ellipsis > * {
+    display: table-cell;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
