@@ -1,15 +1,15 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-  <div id="publish" class="tab-pane fade">
-          <h3>Publish</h3>
-          <form class ='form-group' action="{% url 'blog-posts'%}">
-          {% csrf_token %}
-            <label >Title:</label>
-          {{ form.title }}
-          <label >Body:</label>
-          {{ form.body }}
-          <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+  <div id="publish">
+    <h3>Publish</h3>
+    <form class ='form-group' method="POST">
+      {% csrf_token %}
+      <label >Title:</label>
+      {{ form.title }}</br>
+      <label >Body:</label>
+      {{ form.body }}</br>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
   </div>
 {% endblock %}

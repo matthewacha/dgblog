@@ -7,6 +7,7 @@
                 {{ post.created }}
             </div>
         {% endif %}
+        <a href="{% url 'post_edit' pk=post.pk %}" >Edit</a>
         <h1>{{ post.title }}</h1>
         <p>{{ post.body|linebreaksbr }}</p>
     </div>

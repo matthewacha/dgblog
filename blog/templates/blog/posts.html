@@ -1,33 +1,28 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<p>Post your ideas</p>
                     
-                      <div class="content">
-                          <div class = "post" >
-                              {% if posts %}
-                                  {% for post in posts %}
-                                    <h2>{{post.title}}</h2>
-                                    <div class="date">
-                                    Published: {{ post.created }}
-                                   </div>
-                                    
-                                    <div id="{{post.id}}" class="truncate-ellipsis" >
-                                        <p>
-                                            <span>
-                                                {{ post.body|linebreaksbr }}
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                                
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <a href="{% url 'post_detail' pk=post.pk %}" >view more</a>
-                                  {% endfor %}
-                              {% else %}
-                                    <div><h2>No posts available, please publish one</h2></div>
-                              {% endif %}
-                          </div>
-                        </div>
+    <div class="content">
+        <div class = "post" >
+            {% if posts %}
+                {% for post in posts %}
+                    <h2>{{post.title}}</h2>
+                    <div class="date">
+                    Published: {{ post.created }}
+                    </div>
+                    
+                    <div id="{{post.id}}" class="truncate-ellipsis" >
+                        <p>
+                            <span>
+                                {{ post.body|linebreaksbr }}
+                            </span>
+                        </p>
+                    </div>
+                    <a href="{% url 'post_detail' pk=post.pk %}" >view more</a>
+                {% endfor %}
+            {% else %}
+                <div><h2>No posts available, please publish one</h2></div>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}
